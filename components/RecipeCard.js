@@ -4,12 +4,12 @@ import Image from 'next/image'
 
 export default function RecipeCard({recipe}) {
     const { title, slug, cookingTime, thumbnail} = recipe.fields
+    console.log(slug)
     return (
         <div className="card" >
             <div className="featured">
                 <Image src={'https:'+ thumbnail.fields.file.url}
                 width={thumbnail.fields.file.details.image.width}
-                height={thumbnail.fields.file.details.image.height}
                 />
             </div>
             <div className="content">
@@ -19,6 +19,7 @@ export default function RecipeCard({recipe}) {
                 </div>
                 <div className="actions">
                     <Link className="link" href={'/recipes/'+slug} > Cook this</Link>
+                    <Link className="link" href={'/recipes/'+slug }> Cook thisss</Link>
                 </div>
             </div>
 
